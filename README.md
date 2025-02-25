@@ -62,3 +62,8 @@ Em ordem de relevância, avaliaremos:
 O projeto deverá ser hospedado em um repositório no seu GitHub. O link do repositório deverá ser fornecido por meio do formulário de Teste Técnico encaminhado ao seu e-mail. Não serão aceitos links de projetos enviados por outros meios.
 
 Demais instruções e regras serão instruídas nos formulários e nas comunicações do processo seletivo do qual você está participando.
+
+### Entrega
+
+⏰ Prazo
+Você tem até 09/03/2025, às 23h55 (horário de Brasília-DF), para enviar este formulário preenchido.
