@@ -16,3 +16,7 @@
 
   --type-first: Helvetica, Arial, sans-serif;
 }
+
+html {
+  background-color: var(--gray-0);
+}

@@ -1,0 +1,9 @@
+.header {
+  background-color: var(--white);
+  padding: 23px 0px 23px 32px;
+  max-width: 1024px;
+  box-shadow: 0, 0, 0, 1.5;
+}
+
+@media (max-width: 10rem) {
+}
