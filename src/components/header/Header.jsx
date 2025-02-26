@@ -3,9 +3,11 @@ import Logo from '../../Assets/icons/logo.svg';
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-      <img src={Logo} alt="" />
-    </header>
+    <div className="container">
+      <header className={styles.header}>
+        <img src={Logo} alt="" />
+      </header>
+    </div>
   );
 };
 

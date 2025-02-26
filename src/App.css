@@ -19,4 +19,9 @@
 
 html {
   background-color: var(--gray-0);
+  font-family: Helvetica;
+}
+
+.container {
+  max-width: 1024px;
 }
