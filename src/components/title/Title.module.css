@@ -10,15 +10,28 @@
   font-weight: 500;
 }
 
-.title input {
-  width: 287px;
-  height: 48px;
-  border-radius: 8px;
-  border: 1px solid var(--gray-10);
+.container {
+  position: relative;
 }
 
-input {
-  padding: 8px;
-  font-size: 16px;
-  font-weight: 400;
+.container input {
+  width: 287px;
+  height: 48px;
+  padding: 10px 40px 10px 16px;
+  border: 1px solid var(--gray-10);
+  border-radius: 8px;
+}
+
+input::placeholder {
+  color: var(--gray-20);
+}
+
+.search {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-10);
+  cursor: pointer;
+  width: 20px;
 }
