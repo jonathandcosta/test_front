@@ -97,37 +97,39 @@ const formatPhoneNumber = (phone) => {
 
 const Table = () => {
   return (
-    <div className={styles.tableContainer}>
-      <table className={styles.table}>
-        <thead>
-          <tr className={styles.header}>
-            <th>Imagem</th>
-            <th>Nome</th>
-            <th>Cargo</th>
-            <th>Data de Admissão</th>
-            <th>Telefone</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>
-                <img
-                  className={styles.thumb}
-                  src={user.image}
-                  alt={user.nome}
-                />
-              </td>
-              <td>{user.name}</td>
-              <td>{user.job}</td>
-              <td>
-                {new Date(user.admission_date).toLocaleDateString('pt-BR')}
-              </td>
-              <td>{formatPhoneNumber(user.phone)}</td>
+    <div className="container">
+      <div className={styles.tableContainer}>
+        <table className={styles.table}>
+          <thead>
+            <tr className={styles.header}>
+              <th className={styles.img}>Foto</th>
+              <th>Nome</th>
+              <th>Cargo</th>
+              <th>Data de Admissão</th>
+              <th>Telefone</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <td>
+                  <img
+                    className={styles.thumb}
+                    src={user.image}
+                    alt={user.nome}
+                  />
+                </td>
+                <td>{user.name}</td>
+                <td>{user.job}</td>
+                <td>
+                  {new Date(user.admission_date).toLocaleDateString('pt-BR')}
+                </td>
+                <td>{formatPhoneNumber(user.phone)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

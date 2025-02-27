@@ -7,8 +7,10 @@ function App() {
   return (
     <>
       <Header />
-      <Title />
-      <Table />
+      <main className="container">
+        <Title />
+        <Table />
+      </main>
     </>
   );
 }

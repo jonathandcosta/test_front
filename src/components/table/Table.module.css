@@ -1,6 +1,6 @@
 .tableContainer {
   overflow-x: auto;
-  padding: 32px;
+  margin-top: 32px;
   width: 960px;
 }
 
@@ -15,8 +15,8 @@
 
 th,
 td {
-  height: 47px;
-  padding: 12px;
+  height: 49px;
+  /* padding: 12px; */
   text-align: left;
   border-bottom: 1px solid #ddd;
   font-size: 16px;
@@ -29,6 +29,10 @@ th {
   font-size: 16px;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.img {
+  padding-left: 32px;
 }
 
 tr:hover {
