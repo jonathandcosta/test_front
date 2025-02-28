@@ -9,6 +9,7 @@
 .title h1 {
   font-size: 20px;
   font-weight: 500;
+  color: var(--black);
 }
 
 .container {
@@ -43,7 +44,7 @@ input::placeholder {
   }
 
   .title h1 {
-    margin: 24px 0px 24px 20px;
+    margin: 24px 0px 24px 0px;
   }
 
   .container input {

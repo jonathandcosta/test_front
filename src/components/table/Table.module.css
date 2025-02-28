@@ -8,7 +8,7 @@
   width: 100%;
   border-collapse: collapse;
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 8px 8px 0px 0px;
   overflow: hidden;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -16,7 +16,6 @@
 th,
 td {
   height: 49px;
-  /* padding: 12px; */
   text-align: left;
   border-bottom: 1px solid #ddd;
   font-size: 16px;
@@ -48,31 +47,71 @@ tr:hover {
 }
 
 .circle,
-.button {
+.dropdownButton {
   display: none;
 }
 
-/* 📌 Estilos para telas menores */
+/* INICIO DO DROPDOWN */
+.dropdownButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.mobileDropdown {
+  display: none;
+}
+
+.mobileDropdown td {
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+.dropdownContent p {
+  font-weight: 400;
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  border-bottom: 2px dotted #dfdfdf;
+}
+
+.dropdownContent span {
+  font-weight: 500;
+}
+
+/*Estilos para telas menores */
 @media (max-width: 768px) {
   .tableContainer {
     width: 335px;
+    margin-top: 20px;
   }
 
-  .circle,
-  .button {
-    display: table-cell;
-  }
-
-  .circle svg {
-    width: 8px;
-  }
-
-  button {
-    border: none;
-    background: none;
+  th,
+  td {
+    padding: 12px;
   }
 
   .mobile {
     display: none;
+  }
+
+  .circle,
+  .dropdownButton {
+    display: table-cell;
+    width: 32px;
+  }
+
+  .circle svg {
+    width: 8px;
+    display: flex;
+    justify-self: center;
+  }
+
+  /* dropdonw */
+
+  .mobileDropdown {
+    display: table-row;
   }
 }

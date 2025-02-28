@@ -1,7 +1,8 @@
 import styles from './Table.module.css';
 import { formatPhoneNumber } from '../../utils/formatPhoneNumber';
 import { FaCircle } from 'react-icons/fa';
-import { FaChevronDown } from 'react-icons/fa6';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa6';
+import { useState } from 'react';
 
 const users = [
   {
@@ -88,6 +89,8 @@ const users = [
 ];
 
 const Table = () => {
+  const [openDropdown, setOpenDropdown] = useState(null);
+
   return (
     <div className="container">
       <div className={styles.tableContainer}>
@@ -95,7 +98,7 @@ const Table = () => {
           <thead>
             <tr className={styles.header}>
               <th className={styles.img}>Foto</th>
-              <th>Nome</th>
+              <th className={styles.name}>Nome</th>
               <th className={styles.mobile}>Cargo</th>
               <th className={styles.mobile}>Data de Admissão</th>
               <th className={styles.mobile}>Telefone</th>
@@ -106,28 +109,65 @@ const Table = () => {
           </thead>
           <tbody>
             {users.map((user) => (
-              <tr key={user.id}>
-                <td>
-                  <img
-                    className={styles.thumb}
-                    src={user.image}
-                    alt={user.nome}
-                  />
-                </td>
-                <td>{user.name}</td>
-                <td className={styles.mobile}>{user.job}</td>
-                <td className={styles.mobile}>
-                  {new Date(user.admission_date).toLocaleDateString('pt-BR')}
-                </td>
-                <td className={styles.mobile}>
-                  {formatPhoneNumber(user.phone)}
-                </td>
-                <td className={styles.button}>
-                  <button>
-                    <FaChevronDown />
-                  </button>
-                </td>
-              </tr>
+              <>
+                <tr key={user.id}>
+                  <td>
+                    <img
+                      className={styles.thumb}
+                      src={user.image}
+                      alt={user.nome}
+                    />
+                  </td>
+                  <td>{user.name}</td>
+                  <td className={styles.mobile}>{user.job}</td>
+                  <td className={styles.mobile}>
+                    {new Date(user.admission_date).toLocaleDateString('pt-BR')}
+                  </td>
+                  <td className={styles.mobile}>
+                    {formatPhoneNumber(user.phone)}
+                  </td>
+
+                  <td>
+                    <button
+                      className={styles.dropdownButton}
+                      onClick={() =>
+                        setOpenDropdown(
+                          openDropdown === user.id ? null : user.id,
+                        )
+                      }
+                    >
+                      {openDropdown === user.id ? (
+                        <FaChevronUp />
+                      ) : (
+                        <FaChevronDown />
+                      )}
+                    </button>
+                  </td>
+                </tr>
+
+                {/* Dropdown - Mostra os dados escondidos no mobile */}
+                {openDropdown === user.id && (
+                  <tr className={styles.mobileDropdown}>
+                    <td colSpan="6">
+                      <div className={styles.dropdownContent}>
+                        <p>
+                          <span>Cargo</span> {user.job}
+                        </p>
+                        <p>
+                          <span>Data de Admissão</span>
+                          {new Date(user.admission_date).toLocaleDateString(
+                            'pt-BR',
+                          )}
+                        </p>
+                        <p>
+                          <span>Telefone</span>
+                          {formatPhoneNumber(user.phone)}
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                )}
+              </>
             ))}
           </tbody>
         </table>
