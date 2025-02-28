@@ -1,5 +1,7 @@
 import styles from './Table.module.css';
 import { formatPhoneNumber } from '../../utils/formatPhoneNumber';
+import { FaCircle } from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa6';
 
 const users = [
   {
@@ -94,9 +96,12 @@ const Table = () => {
             <tr className={styles.header}>
               <th className={styles.img}>Foto</th>
               <th>Nome</th>
-              <th>Cargo</th>
-              <th>Data de Admissão</th>
-              <th>Telefone</th>
+              <th className={styles.mobile}>Cargo</th>
+              <th className={styles.mobile}>Data de Admissão</th>
+              <th className={styles.mobile}>Telefone</th>
+              <th className={styles.circle}>
+                <FaCircle />
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -110,11 +115,18 @@ const Table = () => {
                   />
                 </td>
                 <td>{user.name}</td>
-                <td>{user.job}</td>
-                <td>
+                <td className={styles.mobile}>{user.job}</td>
+                <td className={styles.mobile}>
                   {new Date(user.admission_date).toLocaleDateString('pt-BR')}
                 </td>
-                <td>{formatPhoneNumber(user.phone)}</td>
+                <td className={styles.mobile}>
+                  {formatPhoneNumber(user.phone)}
+                </td>
+                <td className={styles.button}>
+                  <button>
+                    <FaChevronDown />
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

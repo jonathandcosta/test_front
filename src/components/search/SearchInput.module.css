@@ -1,5 +1,6 @@
 .title {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   margin-top: 32px;
@@ -34,4 +35,18 @@ input::placeholder {
   color: var(--gray-10);
   cursor: pointer;
   width: 20px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    margin-top: 0;
+  }
+
+  .title h1 {
+    margin: 24px 0px 24px 20px;
+  }
+
+  .container input {
+    width: 335px;
+  }
 }

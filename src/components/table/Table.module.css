@@ -46,3 +46,33 @@ tr:hover {
   object-fit: cover;
   margin-left: 32px;
 }
+
+.circle,
+.button {
+  display: none;
+}
+
+/* 📌 Estilos para telas menores */
+@media (max-width: 768px) {
+  .tableContainer {
+    width: 335px;
+  }
+
+  .circle,
+  .button {
+    display: table-cell;
+  }
+
+  .circle svg {
+    width: 8px;
+  }
+
+  button {
+    border: none;
+    background: none;
+  }
+
+  .mobile {
+    display: none;
+  }
+}
